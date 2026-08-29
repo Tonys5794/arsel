@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Студия красоты «Арсель» - маникюр, педикюр, подология и курсы в Перми</title>
+<meta name="description" content="Студия красоты «Арсель» в Перми: маникюр, педикюр, подология, брови, макияж, причёски и курсы для мастеров. Гузель Мутыгулина, 14 лет стажа. Две студии: Запорожская, 1 и Емельяна Ярославского, 60. Онлайн-запись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@200;300;400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2333202F'/><text x='32' y='45' font-size='30' font-family='Georgia,serif' text-anchor='middle' fill='%23F2CBD1'>А</text></svg>">
+<style>
+:root{
+  /* палитра студии: тёплый плюм и розовое золото */
+  --bg:#FBF5F3; --bg2:#FFFFFF; --ink:#241A21; --muted:#7B6A72;
+  --deep:#33202F; --deep-d:#231524; --deep-soft:#F4E7E8;
+  --gold:#B0616F; --gold-d:#8F4C58; --gold-lt:#F2CBD1;
+  --line:#EFE1E1; --ok:#5E8A6B;
+  --radius:18px; --wrap:1280px;
+  --shadow:0 18px 50px rgba(22,32,47,.13);
+  --shadow-s:0 8px 24px rgba(22,32,47,.09);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);
+     font-size:clamp(16px,.42vw + 15px,18.5px);line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,3vw,44px)}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--gold)}
+section{padding:clamp(56px,6.2vw,112px) 0}
+
+.demo{background:var(--deep-d);color:#E6E9EF;text-align:center;font-size:13px;padding:14px 24px;line-height:1.45;font-weight:300}
+.demo b{color:#fff;font-weight:600}
+
+/* шапка */
+header{position:fixed;top:46px;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
+       transition:background .35s,border-color .35s}
+header.solid{background:rgba(247,244,238,.94);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+header .wrap{display:flex;align-items:center;gap:28px;height:82px}
+.logo{font-family:'Jost',var(--sans);font-size:17px;font-weight:300;letter-spacing:.11em;text-transform:uppercase;
+      text-decoration:none;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .35s;color:var(--ink)}
+header.solid .logo{opacity:1;pointer-events:auto}
+.menu{display:flex;gap:30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+      color:rgba(255,255,255,.88)}
+.menu a{text-decoration:none;transition:.2s;white-space:nowrap}
+.menu a:hover{color:#fff}
+header.solid .menu{color:var(--muted)}
+header.solid .menu a:hover{color:var(--gold)}
+.hd-r{display:flex;align-items:center;gap:24px;margin-left:auto}
+.hd-tel,.hd-hours{font-size:14.5px;text-decoration:none;white-space:nowrap;color:#fff}
+.hd-hours{color:rgba(255,255,255,.78)}
+header.solid .hd-tel{color:var(--ink)}
+header.solid .hd-hours{color:var(--muted)}
+header .hbtn{padding:11px 24px;font-size:14px}
+@media(max-width:1520px){.hd-hours{display:none}}
+@media(max-width:1280px){.menu{gap:15px;font-size:11.5px;letter-spacing:.09em}header .wrap{gap:20px}}
+@media(max-width:1100px){.hd-tel{display:none}}
+@media(max-width:960px){
+  .menu{display:none}
+  header .wrap{height:70px}
+  .logo{opacity:1;pointer-events:auto;color:#fff}
+  header.solid .logo{color:var(--ink)}
+}
+
+/* нижняя панель на телефоне */
+.mbar{display:none}
+@media(max-width:960px){
+  body{padding-bottom:74px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;gap:10px;padding:11px 14px;
+        background:rgba(247,244,238,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;text-align:center;padding:13px 8px;font-size:14px}
+}
+
+/* кнопки */
+.btn{display:inline-block;background:var(--deep);color:#fff;text-decoration:none;
+     padding:15px 30px;border-radius:999px;font-weight:600;font-size:15px;font-family:var(--sans);
+     border:0;cursor:pointer;transition:.18s;white-space:nowrap;box-shadow:var(--shadow-s)}
+.btn:hover{background:var(--deep-d);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-d)}
+.btn-line{background:transparent;color:var(--deep);border:1.5px solid var(--deep);box-shadow:none}
+.btn-line:hover{background:var(--deep);color:#fff}
+.btn-light{background:#F5F1E7;color:var(--deep-d)}
+.btn-light:hover{background:#fff}
+
+/* первый экран */
+.cover{position:relative;background:linear-gradient(140deg,#231524 0%,#33202F 52%,#5E3549 100%);
+  color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+  padding:164px 0 0;overflow:hidden}
+.cover:before{content:'';position:absolute;width:760px;height:760px;border-radius:50%;
+  right:-270px;top:-310px;background:rgba(242,203,209,.15)}
+.cover:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;
+  left:-190px;bottom:40px;background:rgba(255,255,255,.045)}
+.cover-in{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:24px 24px 40px}
+.cover-eyebrow{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt);font-weight:600}
+.cover-name{font-family:var(--serif);font-weight:600;letter-spacing:.02em;
+  font-size:clamp(40px,7.4vw,96px);color:#fff;line-height:1;margin-top:16px}
+.cover-role{display:flex;align-items:center;gap:18px;margin-top:22px;font-size:13px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.86);flex-wrap:wrap;justify-content:center}
+.cover-role span{display:block;width:44px;height:1px;background:rgba(255,255,255,.45)}
+.cover-slogan{margin-top:30px;font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(24px,3.4vw,42px);color:var(--gold-lt);line-height:1.2}
+.cover-lead{margin-top:20px;max-width:44em;font-size:clamp(15.5px,.6vw + 13px,18px);line-height:1.65;
+  color:rgba(255,255,255,.78);font-weight:300}
+.cover-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.cover .btn{background:#F5F1E7;color:var(--deep-d)}
+.cover .btn:hover{background:#fff}
+.cover .btn-gold{background:var(--gold);color:#fff}
+.cover .btn-gold:hover{background:var(--gold-d)}
+.cover .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;box-shadow:none}
+.cover .btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.cover-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.16)}
+.cover-stats>div{padding:26px 24px;text-align:center;border-left:1px solid rgba(255,255,255,.13)}
+.cover-stats>div:first-child{border-left:0}
+.cover-stats b{display:block;font-family:var(--serif);font-size:clamp(22px,1.9vw,30px);font-weight:600;line-height:1.2}
+.cover-stats span{display:block;margin-top:5px;font-size:12.5px;color:rgba(255,255,255,.66);font-weight:300}
+@media(max-width:960px){
+  .cover{padding-top:142px}
+  .cover-stats{grid-template-columns:1fr 1fr}
+  .cover-stats>div{padding:20px 14px;border-top:1px solid rgba(255,255,255,.13)}
+  .cover-stats>div:nth-child(odd){border-left:0}
+  .cover-stats>div:nth-child(-n+2){border-top:0}
+  .cover-cta .btn{width:100%}
+}
+
+/* бегущая строка */
+.strip{background:var(--deep-d);color:#E4E7EE;overflow:hidden;padding:15px 0;white-space:nowrap}
+.strip-track{display:inline-flex;animation:scroll 42s linear infinite}
+.strip-item{padding:0 26px;font-size:14px;font-weight:300;letter-spacing:.04em;text-transform:uppercase}
+.strip-item:after{content:'\2726';margin-left:26px;color:var(--gold-lt);font-size:11px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+/* заголовки секций */
+.sec-head{margin-bottom:clamp(28px,3vw,52px);max-width:46em}
+.sec-head .tag{color:var(--gold);font-size:12.5px;font-weight:700;letter-spacing:.13em;
+               text-transform:uppercase;display:block;margin-bottom:12px}
+.sec-head h2{font-size:clamp(27px,3.1vw,50px);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-weight:300}
+.light{background:var(--bg2)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* прайс */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{padding:12px 24px;border-radius:999px;border:1.5px solid var(--line);background:#fff;
+     cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--muted);transition:.15s}
+.tab:hover{border-color:var(--deep)}
+.tab.on{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:var(--shadow-s)}
+.plist{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+       border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s)}
+.plist.on{display:grid}
+@media(max-width:760px){.plist.on{grid-template-columns:1fr}}
+.row{display:flex;justify-content:space-between;gap:16px;padding:15px 22px;background:#fff;
+     align-items:baseline;transition:.15s;min-width:0}
+.row:hover{background:var(--deep-soft)}
+.row .nm{font-size:15.5px}
+.row .nm small{display:block;font-size:12.5px;color:var(--muted);font-weight:300}
+.row .pr{font-family:var(--serif);font-size:21px;font-weight:700;white-space:nowrap;color:var(--deep)}
+.upd{font-size:12.5px;color:var(--muted);margin-top:16px;font-weight:300}
+
+/* почему */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,1.6vw,26px)}
+.why article{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+             padding:28px;box-shadow:var(--shadow-s);transition:.2s;min-width:0}
+.why article:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.why .ic{width:44px;height:44px;border-radius:12px;background:var(--deep-soft);color:var(--gold);
+         display:grid;place-items:center;font-size:20px;margin-bottom:14px;font-family:var(--serif);font-weight:700}
+.why h3{font-size:21px;margin-bottom:7px}
+.why p{font-size:14.5px;color:var(--muted);font-weight:300}
+
+/* о мастере */
+.doc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,3.4vw,58px);align-items:start}
+@media(max-width:940px){.doc-grid{grid-template-columns:1fr}}
+.doc-grid>*{min-width:0}
+.q-big{font-family:var(--serif);font-size:clamp(21px,1.9vw,32px);line-height:1.3;color:var(--deep);
+       border-left:3px solid var(--gold);padding:2px 0 2px 22px;margin-bottom:16px}
+.q-big:before{content:'\00AB'} .q-big:after{content:'\00BB'}
+.q-from{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:24px}
+.doc-txt p{color:var(--muted);font-weight:300;margin-bottom:14px}
+.doc-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+.doc-facts div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px}
+.doc-facts b{display:block;font-family:var(--serif);font-size:21px;color:var(--deep)}
+.doc-facts span{font-size:13px;color:var(--muted);font-weight:300}
+@media(max-width:520px){.doc-facts{grid-template-columns:1fr}}
+.doc-photo{position:relative}
+.doc-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--radius);
+  border:1px solid var(--line);box-shadow:var(--shadow)}
+.doc-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);
+  border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-s)}
+.doc-photo b{display:block;font-family:var(--serif);font-size:20px;font-weight:600}
+.doc-photo span{font-size:13px;color:var(--muted);font-weight:300}
+
+/* подарки новым */
+.gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px)}
+@media(max-width:900px){.gifts{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gifts{grid-template-columns:1fr}}
+.gift{background:var(--deep);color:#fff;border-radius:var(--radius);padding:26px 24px;min-width:0}
+.gift b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--gold-lt);margin-bottom:6px}
+.gift span{font-size:14.5px;color:rgba(255,255,255,.78);font-weight:300}
+
+/* работы */
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px)}
+@media(max-width:1000px){.g-grid{grid-template-columns:1fr 1fr}}
+.g{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);box-shadow:var(--shadow-s);min-width:0}
+.g img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.g figcaption{padding:14px 18px;font-size:14px;color:var(--muted);font-weight:300;border-top:1px solid var(--line)}
+
+/* отзывы */
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.6vw,24px)}
+@media(max-width:940px){.rv-grid{grid-template-columns:1fr}}
+.rv-grid>*{min-width:0}
+.r{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-s)}
+.stars{color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:14px}
+.r p{font-size:15.5px;color:var(--muted);font-weight:300}
+.r .who{margin-top:18px;font-weight:600;font-size:15px}
+.r .when{font-size:13px;color:var(--muted);font-weight:300}
+
+/* контакты */
+.c-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,3.4vw,58px);align-items:start}
+@media(max-width:940px){.c-grid{grid-template-columns:1fr}}
+.c-grid>*{min-width:0}
+.c-list{display:grid;gap:20px}
+.c-row .k{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.c-row .v{font-size:18px}
+.c-row .v a{text-decoration:none;border-bottom:1px solid var(--line)}
+.c-row small{display:block;color:var(--muted);font-size:14px;margin-top:4px;font-weight:300}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+      padding:32px;box-shadow:var(--shadow)}
+.card h3{font-size:26px;margin-bottom:6px}
+.card .sub{font-size:15px;color:var(--muted);margin-bottom:20px;font-weight:300}
+.acts{display:grid;gap:10px}
+.acts .btn{width:100%;text-align:center;padding:16px 22px}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px;font-weight:300}
+
+/* правовое */
+.legal{background:var(--deep);color:#E2E6EE}
+.legal h3{font-size:24px;margin-bottom:14px;color:#fff}
+.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3vw,52px)}
+@media(max-width:860px){.legal-grid{grid-template-columns:1fr}}
+.legal-grid>*{min-width:0}
+.legal p,.legal li{font-size:14px;font-weight:300;line-height:1.72;color:rgba(226,230,238,.82)}
+.legal ul{margin:8px 0 0;padding-left:18px}
+.legal b{color:#fff;font-weight:600}
+.legal a{color:#fff}
+.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(242,203,209,.4);border-radius:12px;
+             background:rgba(242,203,209,.14);font-size:14.5px;color:#fff;font-weight:500}
+
+footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-size:14px;font-weight:300}
+.ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.ft .logo{color:#fff;font-size:19px;opacity:1;pointer-events:auto;font-family:'Jost',var(--sans);
+          font-weight:300;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:380px){header .hbtn{padding:10px 15px;font-size:13px}header .wrap{gap:12px}
+  .logo{font-size:15px;letter-spacing:.07em}.q-big{font-size:19px;padding-left:14px}.wrap{padding:0 16px}}
+
+/* ===== ВЫБОР ГОРОДА ===== */
+.citybar{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;background:var(--deep-d);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  border-bottom:1px solid rgba(242,203,209,.18)}
+.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,203,209,.72);
+  font-weight:600;margin-right:4px}
+.cbtn{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer;
+  background:transparent;border:1.5px solid rgba(242,203,209,.35);color:#F0E9DA;
+  padding:6px 20px;border-radius:999px;transition:.18s;line-height:1.25}
+.cbtn:hover{border-color:var(--gold-lt)}
+.cbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
+@media(max-width:520px){.citybar{gap:7px;height:44px}.citybar-t{display:none}
+  .cbtn{padding:6px 16px;font-size:13px}header{top:44px}}
+
+body.loc-zap .only-yar{display:none!important}
+body.loc-yar .only-zap{display:none!important}
+
+.tbd{color:var(--gold);border-bottom:1px dashed rgba(156,127,69,.65);font-weight:600}
+.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(242,203,209,.55)}
+
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--shadow-s)}
+.mcard .ph{width:88px;height:88px;border-radius:50%;background:var(--deep-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  font-family:var(--serif);font-size:32px;font-weight:600;margin-bottom:16px}
+.mcard h3{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:4px;line-height:1.15}
+.mcard .role{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
+  font-weight:700;margin-bottom:10px}
+.mcard p{color:var(--muted);font-size:15.5px;font-weight:300}
+@media(max-width:760px){.mgrid{grid-template-columns:1fr}}
+
+.askbox{background:var(--bg2);border:1.5px dashed var(--gold);border-radius:var(--radius);
+  padding:34px 28px;text-align:center;color:var(--muted);font-weight:300}
+.askbox b{display:block;font-family:var(--serif);font-size:26px;color:var(--ink);
+  font-weight:600;margin-bottom:10px}
+
+/* плитки работ: фото подставится, если файл лежит рядом */
+figure.g.noimg img{display:none}
+figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;justify-content:center;
+  aspect-ratio:1;background:linear-gradient(150deg,var(--deep-soft),#fff);color:var(--gold);
+  font-size:13.5px;text-align:center;padding:20px;border-radius:14px;border:1px dashed var(--gold);
+  font-weight:600;line-height:1.4}
+</style>
+</head>
+<body class="loc-zap">
+
+<div class="citybar">
+  <span class="citybar-t">Студия</span>
+  <button class="cbtn on" type="button" data-city="zap">Запорожская, 1</button>
+  <button class="cbtn" type="button" data-city="yar">Ярославского, 60</button>
+</div>
+
+<header id="hd">
+  <div class="wrap">
+    <a class="logo" href="#top">Арсель</a>
+    <nav class="menu">
+      <a href="#ceny">Цены</a>
+      <a href="#kursy">Курсы</a>
+      <a href="#master">О студии</a>
+      <a href="#raboty">Работы</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="hd-r">
+      <a class="hd-tel" href="tel:+79068771816">+7 906 877-18-16</a>
+      <span class="hd-hours">Работаем до 20:00</span>
+      <a class="btn btn-light hbtn" href="https://vk.ru/wall-47689141_1855" target="_blank" rel="noopener">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="cover">
+  <div class="cover-in">
+    <div class="cover-eyebrow only-zap">Пермь · Запорожская, 1 · вход с салона «Золотой Лотос»</div>
+    <div class="cover-eyebrow only-yar">Пермь · Емельяна Ярославского, 60 · жилой дом «Полосатый»</div>
+    <div class="cover-name">Арсель</div>
+    <div class="cover-role"><span></span>Маникюр · Педикюр · Подология · Курсы<span></span></div>
+    <div class="cover-slogan">Руки и стопы, за которые спокойно</div>
+    <p class="cover-lead">Студия красоты в Перми. Гузель Мутыгулина - дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру, 14 лет практики, практикующий специалист в области подологии. Две студии в городе, запись онлайн круглосуточно.</p>
+    <div class="cover-cta">
+      <a class="btn btn-gold" href="https://vk.ru/wall-47689141_1855" target="_blank" rel="noopener">Записаться онлайн</a>
+      <a class="btn" href="tel:+79068771816">Позвонить</a>
+      <a class="btn btn-line" href="https://vk.me/arselbeautyperm" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+    </div>
+  </div>
+  <div class="cover-stats">
+    <div><b>5,0</b><span>рейтинг сообщества, 14 отзывов</span></div>
+    <div><b>14 лет</b><span>стажа у основателя студии</span></div>
+    <div><b>2 студии</b><span>в Перми</span></div>
+    <div><b>1 400+</b><span>подписчиков в сообществе</span></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span class="strip-item">Маникюр</span><span class="strip-item">Педикюр</span><span class="strip-item">Подология</span><span class="strip-item">Наращивание ногтей</span><span class="strip-item">Титановые нити</span><span class="strip-item">Брови</span><span class="strip-item">Макияж</span><span class="strip-item">Причёски</span><span class="strip-item">Курсы с нуля</span><span class="strip-item">Повышение квалификации</span><span class="strip-item">Маникюр</span><span class="strip-item">Педикюр</span><span class="strip-item">Подология</span><span class="strip-item">Наращивание ногтей</span><span class="strip-item">Титановые нити</span><span class="strip-item">Брови</span><span class="strip-item">Макияж</span><span class="strip-item">Причёски</span><span class="strip-item">Курсы с нуля</span><span class="strip-item">Повышение квалификации</span>
+  </div>
+</div>
+
+<section class="light" id="ceny">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Прайс</span>
+      <h2>Цены <em>открыто</em>, без «уточняйте в личке»</h2>
+      <p>Прайс из карточки услуг сообщества. Точную сумму мастер подтверждает на записи: она зависит от состояния ногтей, длины и выбранного дизайна.</p>
+    </div>
+
+    <div class="tabs rv">
+      <button class="tab on" data-t="manikyur">Маникюр</button>
+      <button class="tab" data-t="pedikyur">Педикюр и подология</button>
+      <button class="tab" data-t="krasota">Брови, макияж, причёски</button>
+    </div>
+
+    <div class="plist on rv" id="manikyur">
+      <div class="row"><span class="nm">Маникюр с полировкой</span><span class="pr">1 200 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр + покрытие в один тон</span><span class="pr">1 800 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр с укреплением</span><span class="pr">2 100 ₽</span></div>
+      <div class="row"><span class="nm">Наращивание ногтей</span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Установка титановых нитей</span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Дизайн<small>сложность обсуждается с мастером</small></span><span class="pr"><span class="tbd">уточнить</span></span></div>
+    </div>
+
+    <div class="plist rv" id="pedikyur">
+      <div class="row"><span class="nm">Экспресс-педикюр</span><span class="pr">1 800 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр с покрытием</span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр подологический<small>без покрытия</small></span><span class="pr">2 700 ₽</span></div>
+      <div class="row"><span class="nm">Услуги подолога<small>работа с проблемой стопы и ногтя</small></span><span class="pr">от 400 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="krasota">
+      <div class="row"><span class="nm">Брови<small>оформление</small></span><span class="pr">800 ₽</span></div>
+      <div class="row"><span class="nm">Причёски</span><span class="pr">1 800 ₽</span></div>
+      <div class="row"><span class="nm">Макияж</span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Экспресс: макияж + причёска</span><span class="pr">3 500 ₽</span></div>
+    </div>
+
+    <p class="upd">Прайс взят из раздела «Услуги» сообщества ВКонтакте. Цены не являются публичной офертой.</p>
+  </div>
+</section>
+
+<section id="kursy">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Обучение</span>
+      <h2>Своя школа: <em>от нуля до дохода</em></h2>
+      <p>Гузель - автор курсов по маникюру и педикюру. Учат с нуля и поднимают квалификацию действующих мастеров.</p>
+    </div>
+
+    <div class="tabs rv">
+      <button class="tab on" data-t="k-man">Маникюр с нуля</button>
+      <button class="tab" data-t="k-ped">Педикюр с нуля</button>
+      <button class="tab" data-t="k-pk">Повышение квалификации</button>
+    </div>
+
+    <div class="plist on rv" id="k-man">
+      <div class="row"><span class="nm">Базовый курс</span><span class="pr">25 000 ₽</span></div>
+      <div class="row"><span class="nm">Продвинутый<small>твёрдые материалы и дизайн</small></span><span class="pr">35 000 ₽</span></div>
+      <div class="row"><span class="nm">Премиум класс<small>наращивание на верхних формах, сложный дизайн</small></span><span class="pr">50 000 ₽</span></div>
+      <div class="row"><span class="nm">Мастер-предприниматель<small>от навыков к доходу и масштабированию</small></span><span class="pr">65 000 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="k-ped">
+      <div class="row"><span class="nm">Базовый курс<small>педикюр и эстетика с элементами подологии</small></span><span class="pr">25 000 ₽</span></div>
+      <div class="row"><span class="nm">Продвинутый курс</span><span class="pr">30 000 ₽</span></div>
+      <div class="row"><span class="nm">Премиум курс</span><span class="pr">50 000 ₽</span></div>
+      <div class="row"><span class="nm">Экспертный курс</span><span class="pr">70 000 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="k-pk">
+      <div class="row"><span class="nm">Квадрат TOP master</span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Миндаль TOP master</span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Идеальный френч</span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Безболезненный аппаратный маникюр</span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Наращивание на верхних и нижних формах</span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Педикюр с элементами подологии<small>для действующих мастеров</small></span><span class="pr"><span class="tbd">цена</span></span></div>
+      <div class="row"><span class="nm">Мастер-класс по актуальным дизайнам</span><span class="pr"><span class="tbd">цена</span></span></div>
+    </div>
+
+    <p class="upd">Живой курс в сообществе указан за 15 000-17 000 ₽ - уточним, к какой программе он относится, и поставим в нужную вкладку.</p>
+  </div>
+</section>
+
+<section class="light" id="podarki">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Новым клиентам</span>
+      <h2>Первый визит <em>выгоднее</em></h2>
+      <p>У студии есть действующее предложение для новых клиентов на первый маникюр. Условия подставим сюда, чтобы человек видел их сразу, а не искал в постах.</p>
+    </div>
+    <div class="gifts rv">
+      <div class="gift"><b>Скидка</b><span>на первый маникюр, размер уточняется</span></div>
+      <div class="gift"><b>Подбор</b><span>формы и покрытия под ваши ногти</span></div>
+      <div class="gift"><b>Консультация</b><span>по домашнему уходу за руками и стопами</span></div>
+      <div class="gift"><b>Онлайн-запись</b><span>без звонков, в любое время суток</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pochemu">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Почему сюда</span>
+      <h2>Не просто красиво, <em>а грамотно</em></h2>
+    </div>
+    <div class="why rv">
+      <article>
+        <div class="ic">14</div>
+        <h3>Четырнадцать лет практики</h3>
+        <p>Основатель студии - дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру.</p>
+      </article>
+      <article>
+        <div class="ic">&#9670;</div>
+        <h3>Подология, а не только красота</h3>
+        <p>Работа с проблемами стопы и ногтей: вросший ноготь, трещины, натоптыши. Это отдельная специальность, она есть не в каждой студии.</p>
+      </article>
+      <article>
+        <div class="ic">&#9711;</div>
+        <h3>Мастера постоянно учатся</h3>
+        <p>Студия сама обучает мастеров и повышает квалификацию, поэтому техника в кресле не отстаёт от того, что происходит в профессии.</p>
+      </article>
+      <article>
+        <div class="ic">&#9993;</div>
+        <h3>Запись онлайн, без переписки</h3>
+        <p>Кнопка «Записаться» ведёт в вашу действующую онлайн-запись: клиент выбирает время сам, в любое время суток.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="master">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">О студии</span>
+      <h2>Студия <em>«Арсель»</em></h2>
+      <p>Две студии в Перми, маникюр, педикюр, подология, брови, макияж и причёски, плюс собственная школа.</p>
+    </div>
+    <div class="doc-txt rv">
+      <div class="q-big">Дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру, практикующий специалист в области подологии</div>
+      <div class="q-from">Гузель Мутыгулина, из описания сообщества</div>
+      <p>Студия «Арсель» работает в Перми на двух площадках и закрывает уход целиком: руки, стопы, брови, макияж и причёску можно сделать в одном месте. Отдельное направление - подология: работа со стопой и ногтями там, где обычного педикюра уже недостаточно.</p>
+      <p>Кроме услуг у студии есть своя школа. Курсы с нуля по маникюру и педикюру, повышение квалификации для действующих мастеров и мастер-классы по актуальным дизайнам.</p>
+      <div class="doc-facts">
+        <div><b>2 адреса</b><span>Запорожская, 1 и Ярославского, 60</span></div>
+        <div><b>До 20:00</b><span>точный график уточняется</span></div>
+        <div><b>5,0</b><span>рейтинг сообщества, 14 отзывов</span></div>
+        <div><b>1 400+</b><span>подписчиков ВКонтакте</span></div>
+      </div>
+    </div>
+
+    <div class="mgrid rv">
+      <div class="mcard">
+        <div class="ph">Г</div>
+        <div class="role">Основатель студии</div>
+        <h3>Гузель</h3>
+        <p>Маникюр, педикюр, подология. Мастер высшей категории, 14 лет практики, автор курсов студии. <span class="tbd">Фото - пришлите, поставим сюда</span>.</p>
+      </div>
+      <div class="mcard">
+        <div class="ph">Е</div>
+        <div class="role">Мастер студии</div>
+        <h3>Екатерина</h3>
+        <p>Маникюр и покрытие, участвует в обучении. Упоминается в отзывах клиентов. <span class="tbd">Уточнить услуги и фото</span>.</p>
+      </div>
+    </div>
+    <p class="upd">Если мастеров больше - пришлите список, добавим карточки всем.</p>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Работы</span>
+      <h2>Портфолио <em>студии</em></h2>
+      <p>Сюда встанут ваши работы из альбомов сообщества - шесть-десять лучших снимков.</p>
+    </div>
+    <div class="g-grid rv">
+      <figure class="g" data-ph="фото работы 1"><img src="g-1.jpg" alt="Работа студии Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Маникюр с покрытием</figcaption></figure>
+      <figure class="g" data-ph="фото работы 2"><img src="g-2.jpg" alt="Работа студии Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Наращивание и дизайн</figcaption></figure>
+      <figure class="g" data-ph="фото работы 3"><img src="g-3.jpg" alt="Работа студии Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Педикюр</figcaption></figure>
+      <figure class="g" data-ph="фото кабинета"><img src="g-4.jpg" alt="Студия Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>В студии</figcaption></figure>
+    </div>
+    <p class="upd">Пришлите файлы, и они встанут на эти места автоматически. Перед публикацией согласуйте снимки с клиентами.</p>
+  </div>
+</section>
+
+<section class="light" id="otzyvy">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Отзывы</span>
+      <h2>Что пишут <em>клиенты</em></h2>
+      <p>Отзывы из сообщества ВКонтакте: рейтинг 5,0, 14 отзывов, отрицательных нет.</p>
+    </div>
+    <div class="rv-grid rv">
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Топ-мастер: всё делает очень аккуратно, до мельчайших деталей. И подсказывает, как лучше ухаживать за ногтями.</p>
+        <div class="who">Айгуль Габсатарова</div><div class="when">ВКонтакте · июль</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Последние полгода хожу только сюда: гель держится долго, чего не находила у других мастеров раньше.</p>
+        <div class="who">Лия Хабибуллина</div><div class="when">ВКонтакте · июнь</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Была на педикюре, прекрасный мастер. Качественно и быстро, всё объяснили. Студия уютная и красивая.</p>
+        <div class="who">Азалия Нафикова</div><div class="when">ВКонтакте · июль</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Отличная студия, бываю часто. Нравится отношение к клиентам, условия, спектр услуг. И то, что мастера постоянно обучаются.</p>
+        <div class="who">Айгуль Ларионова</div><div class="when">ВКонтакте · февраль</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Сделала гигиенический педикюр и осталась довольна. Рекомендую мастера.</p>
+        <div class="who">Ирина Кропачева</div><div class="when">ВКонтакте · август</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Дочь училась на «Маникюре с нуля». Гузель очень терпеливая, постоянно возвращала внимание к технике и повторяла материал. Дочь справилась.</p>
+        <div class="who">Эльза Маркова</div><div class="when">ВКонтакте · июль</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Контакты</span>
+      <h2>Как <em>записаться</em></h2>
+    </div>
+    <div class="c-grid">
+      <div class="c-list rv">
+        <div class="c-row only-zap">
+          <div class="k">Адрес</div>
+          <div class="v">Пермь, улица Запорожская, 1</div>
+          <small>Вход с салона «Золотой Лотос».</small>
+        </div>
+        <div class="c-row only-yar">
+          <div class="k">Адрес</div>
+          <div class="v">Пермь, улица Емельяна Ярославского, 60</div>
+          <small>Жилой дом «Полосатый».</small>
+        </div>
+        <div class="c-row">
+          <div class="k">Режим работы</div>
+          <div class="v">Работаем до 20:00</div>
+          <small><span class="tbd">Точный график по дням уточняется</span></small>
+        </div>
+        <div class="c-row">
+          <div class="k">Телефон</div>
+          <div class="v"><a href="tel:+79068771816">+7 906 877-18-16</a></div>
+          <small>Telegram и MAX на этом же номере</small>
+        </div>
+        <div class="c-row">
+          <div class="k">Второй номер</div>
+          <div class="v"><a href="tel:+79026442085">+7 902 644-20-85</a></div>
+          <small><span class="tbd">Уточнить, какой номер к какой студии</span></small>
+        </div>
+        <div class="c-row">
+          <div class="k">Соцсети</div>
+          <div class="v"><a href="https://vk.ru/arselbeautyperm" target="_blank" rel="noopener">ВКонтакте</a></div>
+          <small>Работы, прайс и анонсы курсов в сообществе</small>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3>Записаться онлайн</h3>
+        <p class="sub">Кнопка ведёт в вашу действующую онлайн-запись: клиент выбирает услугу и время сам, без звонков и переписки.</p>
+        <div class="acts">
+          <a class="btn btn-gold" href="https://vk.ru/wall-47689141_1855" target="_blank" rel="noopener">Выбрать время онлайн</a>
+          <a class="btn" href="https://vk.me/arselbeautyperm" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+          <a class="btn btn-line" href="tel:+79068771816">Позвонить +7 906 877-18-16</a>
+        </div>
+        <p class="note">Форм на сайте нет: запись идёт в ваш сервис, заявки не теряются и не дублируются.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal" id="pravovoe">
+  <div class="wrap">
+    <div class="legal-grid">
+      <div>
+        <h3>Исполнитель услуг</h3>
+        <p>
+          Наименование: <b>ИП Мутыгулина Гузель Хамидулловна</b><br>
+          ИНН: 591792262308 · ОГРНИП: <span class="tbd">указать</span><br>
+          <span class="only-zap">Адрес оказания услуг: г. Пермь, ул. Запорожская, 1<br></span>
+          <span class="only-yar">Адрес оказания услуг: г. Пермь, ул. Емельяна Ярославского, 60<br></span>
+          Телефон: <a href="tel:+79068771816">+7 906 877-18-16</a><br>
+          Режим работы: до 20:00, по предварительной записи
+        </p>
+        <p style="margin-top:14px">Цены на сайте не являются публичной офертой. Итоговая стоимость зависит от состояния ногтей, выбранного покрытия и дизайна и подтверждается мастером до начала работы. Сайт не собирает персональные данные: форм заявок нет, запись ведётся в сервисе онлайн-записи и в сообщениях.</p>
+      </div>
+      <div>
+        <h3>Важно перед записью</h3>
+        <div class="warn">Услуги не являются медицинскими. Имеются ограничения, уточняйте у мастера.</div>
+        <p>Процедуру переносят или подбирают иначе, если есть:</p>
+        <ul>
+          <li>повреждения, воспаления или грибковые поражения кожи и ногтей;</li>
+          <li>индивидуальная непереносимость материалов покрытия;</li>
+          <li>свежие травмы пальцев рук или стоп;</li>
+          <li>хронические заболевания, при которых нужен подолог, а не обычный педикюр.</li>
+        </ul>
+        <p style="margin-top:14px"><span class="tbd">Список условий согласуем с вами</span> - поставим ровно то, что вы говорите клиентам сами.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <span class="logo">Арсель</span>
+    <span class="only-zap">Пермь, ул. Запорожская, 1 · до 20:00 · +7 906 877-18-16</span>
+    <span class="only-yar">Пермь, ул. Ем. Ярославского, 60 · до 20:00 · +7 906 877-18-16</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-gold" href="https://vk.ru/wall-47689141_1855">Записаться</a>
+  <a class="btn" href="https://vk.me/arselbeautyperm">Написать в ВК</a>
+</div>
+
+<div class="demo">Это <b>демонстрационный пример</b> сайта. Всё внутри взято из вашего сообщества ВКонтакте: услуги, прайс, курсы, отзывы, адреса. Наверху - переключатель студий, адрес меняется под выбранную. <span class="tbd">Розовым пунктиром</span> отмечено то, что нужно уточнить у вас.</div>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd');
+  function upd(){hd.classList.toggle('solid', window.scrollY>60)}
+  upd(); window.addEventListener('scroll',upd,{passive:true});
+
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      var grp=t.closest('section');
+      grp.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      grp.querySelectorAll('.plist').forEach(function(p){p.classList.remove('on')});
+      var pl=document.getElementById(t.dataset.t); if(pl){pl.classList.add('on')}
+    });
+  });
+
+  function setLoc(c,user){
+    if(c!=='zap'&&c!=='yar'){c='zap'}
+    document.body.classList.remove('loc-zap','loc-yar');
+    document.body.classList.add('loc-'+c);
+    document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('on',b.dataset.city===c)});
+    try{localStorage.setItem('arsel_loc',c)}catch(e){}
+    if(user){
+      try{history.replaceState(null,'','#'+c)}catch(e){}
+      setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')})},30);
+    }
+  }
+  document.querySelectorAll('.cbtn').forEach(function(b){
+    b.addEventListener('click',function(){setLoc(b.dataset.city,true)});
+  });
+  var hs=(location.hash||'').replace('#','').toLowerCase(), start='';
+  if(hs==='zap'||hs==='yar'){start=hs}
+  else{try{start=localStorage.getItem('arsel_loc')||''}catch(e){}}
+  setLoc(start||'zap',false);
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+
+</body>
+</html>
