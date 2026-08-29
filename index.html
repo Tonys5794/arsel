@@ -192,8 +192,6 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .doc-facts span{font-size:13px;color:var(--muted);font-weight:300}
 @media(max-width:520px){.doc-facts{grid-template-columns:1fr}}
 .doc-photo{position:relative}
-@media(max-width:940px){.doc-photo{max-width:340px;margin:0 auto}}
-.doc-photo{max-width:460px;margin-left:auto}
 .doc-photo img{width:100%;aspect-ratio:3/5;object-fit:cover;object-position:center top;display:block;border-radius:var(--radius);
   border:1px solid var(--line);box-shadow:var(--shadow)}
 .doc-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);
@@ -314,7 +312,8 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
   aspect-ratio:1;background:linear-gradient(150deg,var(--deep-soft),#fff);color:var(--gold);
   font-size:13.5px;text-align:center;padding:20px;border-radius:14px;border:1px dashed var(--gold);
   font-weight:600;line-height:1.4}
-.doc-photo.noimg:before{aspect-ratio:4/5}
+.doc-photo.noimg:before{aspect-ratio:4/5;min-height:520px;font-size:15px}
+@media(max-width:940px){.doc-photo.noimg:before{min-height:420px}}
 .docs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);margin-top:28px}
 @media(max-width:760px){.docs{grid-template-columns:1fr 1fr}}
 .docs figure:before{aspect-ratio:3/4}
@@ -572,9 +571,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
         <div><b>1 400+</b><span>подписчиков ВКонтакте</span></div>
       </div>
     </div>
-      <figure class="doc-photo rv noimg" data-ph="фото Гузель">
-        <figcaption><b>Гузель Мутыгулина</b><span>основатель студии, мастер высшей категории</span></figcaption>
-      </figure>
+      <figure class="doc-photo rv noimg" data-ph="фото Гузель"></figure>
     </div>
 
     <div class="mgrid rv">
