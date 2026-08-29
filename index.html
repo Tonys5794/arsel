@@ -192,7 +192,9 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .doc-facts span{font-size:13px;color:var(--muted);font-weight:300}
 @media(max-width:520px){.doc-facts{grid-template-columns:1fr}}
 .doc-photo{position:relative}
-.doc-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--radius);
+@media(max-width:940px){.doc-photo{max-width:340px;margin:0 auto}}
+.doc-photo{max-width:460px;margin-left:auto}
+.doc-photo img{width:100%;aspect-ratio:3/5;object-fit:cover;object-position:center top;display:block;border-radius:var(--radius);
   border:1px solid var(--line);box-shadow:var(--shadow)}
 .doc-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);
   border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-s)}
@@ -570,14 +572,14 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
         <div><b>1 400+</b><span>подписчиков ВКонтакте</span></div>
       </div>
     </div>
-      <figure class="doc-photo rv" data-ph="фото Гузель"><img src="master.jpg" alt="Гузель Мутыгулина, основатель студии Арсель" onerror="this.closest('figure').classList.add('noimg')">
+      <figure class="doc-photo rv noimg" data-ph="фото Гузель">
         <figcaption><b>Гузель Мутыгулина</b><span>основатель студии, мастер высшей категории</span></figcaption>
       </figure>
     </div>
 
     <div class="mgrid rv">
       <div class="mcard">
-        <img class="ph" src="master-round.jpg" alt="Гузель Мутыгулина">
+        <div class="ph">Г</div>
         <div class="role">Основатель студии</div>
         <h3>Гузель</h3>
         <p>Маникюр, педикюр, подология. Мастер высшей категории, 14 лет практики, автор курсов студии.</p>
