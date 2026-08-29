@@ -299,11 +299,19 @@ body.loc-yar .only-zap{display:none!important}
   font-weight:600;margin-bottom:10px}
 
 /* плитки работ: фото подставится, если файл лежит рядом */
-figure.g.noimg img{display:none}
-figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;justify-content:center;
+figure.noimg img{display:none}
+figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justify-content:center;
   aspect-ratio:1;background:linear-gradient(150deg,var(--deep-soft),#fff);color:var(--gold);
   font-size:13.5px;text-align:center;padding:20px;border-radius:14px;border:1px dashed var(--gold);
   font-weight:600;line-height:1.4}
+.doc-photo.noimg:before{aspect-ratio:4/5}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px);margin-top:28px}
+@media(max-width:760px){.docs{grid-template-columns:1fr 1fr}}
+.docs figure:before{aspect-ratio:3/4}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(14px,1.5vw,22px);margin-top:8px}
+.step{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-s)}
+.step b{display:block;font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1;margin-bottom:10px}
+.step p{font-size:15px;color:var(--muted);font-weight:300}
 </style>
 </head>
 <body class="loc-zap">
@@ -320,6 +328,7 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
     <nav class="menu">
       <a href="#ceny">Цены</a>
       <a href="#kursy">Курсы</a>
+      <a href="#uchenicy">Ученицы</a>
       <a href="#master">О студии</a>
       <a href="#raboty">Работы</a>
       <a href="#otzyvy">Отзывы</a>
@@ -443,6 +452,47 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
     </div>
 
     <p class="upd">Живой курс в сообществе указан за 15 000-17 000 ₽ - уточним, к какой программе он относится, и поставим в нужную вкладку.</p>
+
+    <div class="sec-head rv" style="margin-top:56px">
+      <span class="tag">Как проходит</span>
+      <h2>Обучение <em>без воды</em></h2>
+      <p>Так курс описан в сообществе студии. Обучение проходит в студии на улице Емельяна Ярославского, 60.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><b>1</b><p>Понятная теория без «воды» - сразу к делу, без лишних часов ни о чём.</p></div>
+      <div class="step"><b>2</b><p>Много практики на моделях под контролем опытного мастера.</p></div>
+      <div class="step"><b>3</b><p>Разбор частых ошибок и лайфхаки, которые экономят время в работе.</p></div>
+      <div class="step"><b>4</b><p>Чек-листы и алгоритмы, чтобы не путаться в этапах после курса.</p></div>
+      <div class="step"><b>5</b><p>Сертификат по окончании - плюс к доверию клиентов с первого дня.</p></div>
+      <div class="step"><b>6</b><p>Поддержка после обучения: <span class="tbd">уточнить, есть ли сопровождение</span>.</p></div>
+    </div>
+
+    <div class="card rv" style="margin-top:34px">
+      <h3>Записаться на курс</h3>
+      <p class="sub">Напишите «Хочу на курс» в сообщения сообщества - расскажем расписание ближайшего потока и поможем с записью. Количество мест на поток ограничено.</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="https://vk.me/arselbeautyperm" target="_blank" rel="noopener">Написать «Хочу на курс»</a>
+        <a class="btn btn-line" href="tel:+79068771816">Позвонить и спросить про даты</a>
+      </div>
+      <p class="note"><span class="tbd">В сообществе была акция: скидка 40% для школьниц и студенток. Скажите, действует ли она сейчас - поставим на видное место.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="uchenicy">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Ученицы</span>
+      <h2>Работы <em>после курса</em></h2>
+      <p>В сообществе два альбома с работами учениц: «Работы наших учениц» и «Мои ученики», больше ста снимков. Лучшие из них встанут сюда - это самое сильное доказательство, что курс работает.</p>
+    </div>
+    <div class="g-grid rv">
+      <figure class="g" data-ph="работа ученицы 1"><img src="u-1.jpg" alt="Работа ученицы курса" onerror="this.closest('figure').classList.add('noimg')"><figcaption>После базового курса</figcaption></figure>
+      <figure class="g" data-ph="работа ученицы 2"><img src="u-2.jpg" alt="Работа ученицы курса" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Маникюр с дизайном</figcaption></figure>
+      <figure class="g" data-ph="работа ученицы 3"><img src="u-3.jpg" alt="Работа ученицы курса" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Наращивание на формах</figcaption></figure>
+      <figure class="g" data-ph="фото с обучения"><img src="u-4.jpg" alt="Обучение в студии Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>На курсе в студии</figcaption></figure>
+    </div>
+    <p class="upd">Фотографии из альбомов сообщества. Перед публикацией согласуйте снимки с ученицами.</p>
   </div>
 </section>
 
@@ -493,13 +543,14 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
   </div>
 </section>
 
-<section class="light" id="master">
+<section id="master">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="tag">О студии</span>
-      <h2>Студия <em>«Арсель»</em></h2>
+      <span class="tag">О студии и мастере</span>
+      <h2>Гузель <em>Мутыгулина</em></h2>
       <p>Две студии в Перми, маникюр, педикюр, подология, брови, макияж и причёски, плюс собственная школа.</p>
     </div>
+    <div class="doc-grid">
     <div class="doc-txt rv">
       <div class="q-big">Дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру, практикующий специалист в области подологии</div>
       <div class="q-from">Гузель Мутыгулина, из описания сообщества</div>
@@ -511,6 +562,10 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
         <div><b>5,0</b><span>рейтинг сообщества, 14 отзывов</span></div>
         <div><b>1 400+</b><span>подписчиков ВКонтакте</span></div>
       </div>
+    </div>
+      <figure class="doc-photo rv noimg" data-ph="фото Гузель"><img src="master.jpg" alt="Гузель Мутыгулина, основатель студии Арсель" onerror="this.closest('figure').classList.add('noimg')">
+        <figcaption><b>Гузель Мутыгулина</b><span>основатель студии, мастер высшей категории</span></figcaption>
+      </figure>
     </div>
 
     <div class="mgrid rv">
@@ -528,10 +583,22 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
       </div>
     </div>
     <p class="upd">Если мастеров больше - пришлите список, добавим карточки всем.</p>
+
+    <div class="sec-head rv" style="margin-top:56px">
+      <span class="tag">Квалификация</span>
+      <h2>Дипломы <em>и сертификаты</em></h2>
+      <p>В описании студии сказано: дипломированный и аккредитованный мастер высшей категории, практикующий специалист в области подологии. В сообществе сканов нет - пришлите, и они встанут сюда. Для курсов за 25-70 тысяч это половина решения клиента.</p>
+    </div>
+    <div class="docs rv">
+      <figure data-ph="диплом или сертификат"><img src="s-1.jpg" alt="Документ об образовании" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Диплом мастера</figcaption></figure>
+      <figure data-ph="аккредитация"><img src="s-2.jpg" alt="Аккредитация мастера" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Аккредитация, высшая категория</figcaption></figure>
+      <figure data-ph="подология"><img src="s-3.jpg" alt="Сертификат по подологии" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Подология</figcaption></figure>
+    </div>
+    <p class="upd">Подписи под документами поправим под то, что на самом деле написано в ваших дипломах.</p>
   </div>
 </section>
 
-<section id="raboty">
+<section class="light" id="raboty">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="tag">Работы</span>
@@ -677,7 +744,7 @@ figure.g.noimg:before{content:attr(data-ph);display:flex;align-items:center;just
   <a class="btn" href="https://vk.me/arselbeautyperm">Написать в ВК</a>
 </div>
 
-<div class="demo">Это <b>демонстрационный пример</b> сайта. Всё внутри взято из вашего сообщества ВКонтакте: услуги, прайс, курсы, отзывы, адреса. Наверху - переключатель студий, адрес меняется под выбранную. <span class="tbd">Розовым пунктиром</span> отмечено то, что нужно уточнить у вас.</div>
+<div class="demo">Это <b>демонстрационный пример</b> сайта. Всё внутри взято из вашего сообщества ВКонтакте: услуги, прайс, курсы, программа обучения, отзывы, адреса. Наверху - переключатель студий. Пустые рамки - места под ваши фотографии: работы, ученицы, кабинет, дипломы. <span class="tbd">Розовым пунктиром</span> отмечено то, что нужно уточнить у вас.</div>
 
 <script>
 (function(){
