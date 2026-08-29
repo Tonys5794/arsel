@@ -8,14 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@200;300;400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2333202F'/><text x='32' y='45' font-size='30' font-family='Georgia,serif' text-anchor='middle' fill='%23F2CBD1'>А</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230E3B3F'/><text x='32' y='45' font-size='30' font-family='Georgia,serif' text-anchor='middle' fill='%238FE0D2'>А</text></svg>">
 <style>
 :root{
-  /* палитра студии: тёплый плюм и розовое золото */
-  --bg:#FBF5F3; --bg2:#FFFFFF; --ink:#241A21; --muted:#7B6A72;
-  --deep:#33202F; --deep-d:#231524; --deep-soft:#F4E7E8;
-  --gold:#B0616F; --gold-d:#8F4C58; --gold-lt:#F2CBD1;
-  --line:#EFE1E1; --ok:#5E8A6B;
+  /* палитра студии: бирюза с фотофона сообщества */
+  --bg:#F1F8F6; --bg2:#FFFFFF; --ink:#10262A; --muted:#5D7B7D;
+  --deep:#0E3B3F; --deep-d:#082A2D; --deep-soft:#DCF0EC;
+  --gold:#12A092; --gold-d:#0C7C71; --gold-lt:#8FE0D2;
+  --line:#D8E9E5; --ok:#4F8F7A;
   --radius:18px; --wrap:1280px;
   --shadow:0 18px 50px rgba(22,32,47,.13);
   --shadow-s:0 8px 24px rgba(22,32,47,.09);
@@ -88,11 +88,11 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .btn-light:hover{background:#fff}
 
 /* первый экран */
-.cover{position:relative;background:linear-gradient(140deg,#231524 0%,#33202F 52%,#5E3549 100%);
+.cover{position:relative;background:linear-gradient(140deg,#082A2D 0%,#0E3B3F 52%,#17877E 100%);
   color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
   padding:164px 0 0;overflow:hidden}
 .cover:before{content:'';position:absolute;width:760px;height:760px;border-radius:50%;
-  right:-270px;top:-310px;background:rgba(242,203,209,.15)}
+  right:-270px;top:-310px;background:rgba(143,224,210,.15)}
 .cover:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;
   left:-190px;bottom:40px;background:rgba(255,255,255,.045)}
 .cover-in{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;
@@ -251,8 +251,8 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .legal ul{margin:8px 0 0;padding-left:18px}
 .legal b{color:#fff;font-weight:600}
 .legal a{color:#fff}
-.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(242,203,209,.4);border-radius:12px;
-             background:rgba(242,203,209,.14);font-size:14.5px;color:#fff;font-weight:500}
+.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(143,224,210,.4);border-radius:12px;
+             background:rgba(143,224,210,.14);font-size:14.5px;color:#fff;font-weight:500}
 
 footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-size:14px;font-weight:300}
 .ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
@@ -264,11 +264,11 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
 /* ===== ВЫБОР ГОРОДА ===== */
 .citybar{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;background:var(--deep-d);
   display:flex;align-items:center;justify-content:center;gap:10px;
-  border-bottom:1px solid rgba(242,203,209,.18)}
-.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,203,209,.72);
+  border-bottom:1px solid rgba(143,224,210,.18)}
+.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(143,224,210,.72);
   font-weight:600;margin-right:4px}
 .cbtn{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer;
-  background:transparent;border:1.5px solid rgba(242,203,209,.35);color:#F0E9DA;
+  background:transparent;border:1.5px solid rgba(143,224,210,.35);color:#F0E9DA;
   padding:6px 20px;border-radius:999px;transition:.18s;line-height:1.25}
 .cbtn:hover{border-color:var(--gold-lt)}
 .cbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
@@ -279,7 +279,7 @@ body.loc-zap .only-yar{display:none!important}
 body.loc-yar .only-zap{display:none!important}
 
 .tbd{color:var(--gold);border-bottom:1px dashed rgba(156,127,69,.65);font-weight:600}
-.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(242,203,209,.55)}
+.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(143,224,210,.55)}
 
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .mcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
@@ -287,6 +287,13 @@ body.loc-yar .only-zap{display:none!important}
 .mcard .ph{width:88px;height:88px;border-radius:50%;background:var(--deep-soft);
   display:flex;align-items:center;justify-content:center;color:var(--gold);
   font-family:var(--serif);font-size:32px;font-weight:600;margin-bottom:16px}
+.mcard img.ph{display:block;object-fit:cover;object-position:center top}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px);margin-top:26px;max-width:620px}
+.certs figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:var(--bg2);box-shadow:var(--shadow-s)}
+.certs img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.certs figcaption{padding:12px 16px;font-size:13.5px;color:var(--muted);font-weight:300;
+  border-top:1px solid var(--line)}
 .mcard h3{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:4px;line-height:1.15}
 .mcard .role{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
   font-weight:700;margin-bottom:10px}
@@ -478,6 +485,16 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       </div>
       <p class="note"><span class="tbd">В сообществе была акция: скидка 40% для школьниц и студенток. Скажите, действует ли она сейчас - поставим на видное место.</span></p>
     </div>
+
+    <div class="sec-head rv" style="margin-top:52px">
+      <span class="tag">Документ</span>
+      <h2>Сертификат <em>по окончании</em></h2>
+      <p>Такой сертификат студии получает выпускница курса или мастер-класса. Он подписан вашим именем как преподавателя - для мастера это аргумент перед её клиентами.</p>
+    </div>
+    <div class="certs rv">
+      <figure><img src="s-1.jpg" alt="Сертификат студии Арсель"><figcaption>Сертификат за мастер-класс по дизайну ногтей</figcaption></figure>
+      <figure><img src="s-2.jpg" alt="Сертификат студии Арсель"><figcaption>Выдаётся от ТОП-мастера Гузель Мутыгулиной</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -572,7 +589,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 
     <div class="mgrid rv">
       <div class="mcard">
-        <div class="ph">Г</div>
+        <img class="ph" src="master-round.jpg" alt="Гузель Мутыгулина">
         <div class="role">Основатель студии</div>
         <h3>Гузель</h3>
         <p>Маникюр, педикюр, подология. Мастер высшей категории, 14 лет практики, автор курсов студии. <span class="tbd">Фото - пришлите, поставим сюда</span>.</p>
@@ -589,7 +606,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     <div class="sec-head rv" style="margin-top:56px">
       <span class="tag">Квалификация</span>
       <h2>Дипломы <em>и сертификаты</em></h2>
-      <p>В описании студии сказано: дипломированный и аккредитованный мастер высшей категории, практикующий специалист в области подологии. В сообществе сканов нет - пришлите, и они встанут сюда. Для курсов за 25-70 тысяч это половина решения клиента.</p>
+      <p>Сертификаты, которые вы выдаёте ученицам, уже стоят выше. Здесь не хватает ваших собственных: диплом мастера, аккредитация высшей категории, подология. В сообществе сканов нет - пришлите, и они встанут сюда. Для курсов за 25-70 тысяч это половина решения клиента.</p>
     </div>
     <div class="docs rv">
       <figure data-ph="диплом или сертификат"><img src="s-1.jpg" alt="Документ об образовании" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Диплом мастера</figcaption></figure>
@@ -756,7 +773,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
   <a class="btn" href="https://vk.me/arselbeautyperm">Написать в ВК</a>
 </div>
 
-<div class="demo">Это <b>демонстрационный пример</b> сайта. Всё внутри взято из вашего сообщества ВКонтакте: услуги, прайс, курсы, программа обучения, отзывы, адреса и запись в Дикиди. Наверху - переключатель студий: вместе с адресом меняется и ссылка на запись. Пустые рамки - места под ваши фотографии. <span class="tbd">Розовым пунктиром</span> отмечено то, что нужно уточнить у вас.</div>
+<div class="demo">Это <b>демонстрационный пример</b> сайта. Всё внутри взято из вашего сообщества ВКонтакте: услуги, прайс, курсы, программа обучения, отзывы, адреса и запись в Дикиди. Наверху - переключатель студий: вместе с адресом меняется и ссылка на запись. Пустые рамки - места под ваши фотографии. <span class="tbd">Бирюзовым пунктиром</span> отмечено то, что нужно уточнить у вас.</div>
 
 <script>
 (function(){
