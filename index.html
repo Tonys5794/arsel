@@ -448,43 +448,104 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     <div class="sec-head rv">
       <span class="tag">Прайс</span>
       <h2>Цены и <em>услуги</em></h2>
-      <p>Прайс из карточки услуг сообщества. Точную сумму мастер подтверждает на записи: она зависит от состояния ногтей, длины и выбранного дизайна.</p>
+      <p class="only-zap">Полный прайс студии на Юбилейном, прямо из системы онлайн-записи.</p>
+      <p class="only-yar">Полный прайс студии на Крохалева, прямо из системы онлайн-записи.</p>
     </div>
 
-    <div class="tabs rv">
-      <button class="tab on" data-t="manikyur">Маникюр</button>
-      <button class="tab" data-t="pedikyur">Педикюр и подология</button>
-      <button class="tab" data-t="krasota">Брови, ресницы, макияж</button>
+    <div class="tabs rv only-zap">
+      <button class="tab on" data-t="man-z">Маникюр</button>
+      <button class="tab" data-t="ped-z">Педикюр</button>
+      <button class="tab" data-t="pod-z">Подология</button>
+      <button class="tab" data-t="bro-z">Брови и ресницы</button>
+    </div>
+    <div class="tabs rv only-yar">
+      <button class="tab on" data-t="man-y">Маникюр</button>
+      <button class="tab" data-t="ped-y">Педикюр</button>
+      <button class="tab" data-t="bro-y">Брови и ресницы</button>
     </div>
 
-    <div class="plist on rv" id="manikyur">
-      <div class="row"><span class="nm">Маникюр с полировкой</span><span class="pr">1 200 ₽</span></div>
-      <div class="row"><span class="nm">Маникюр + покрытие в один тон</span><span class="pr">1 800 ₽</span></div>
-      <div class="row"><span class="nm">Маникюр с укреплением</span><span class="pr">2 100 ₽</span></div>
-      <div class="row"><span class="nm">Наращивание ногтей</span><span class="pr">2 500 ₽</span></div>
-      <div class="row"><span class="nm">Установка титановых нитей</span><span class="pr">2 500 ₽</span></div>
+    <div class="plist on rv only-zap" id="man-z">
+      <div class="row"><span class="nm">Маникюр гигиенический<small>без покрытия</small></span><span class="pr">от 1 200 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр гигиенический со снятием<small>без последующего покрытия</small></span><span class="pr">от 1 400 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр с покрытием<small>однотонное</small></span><span class="pr">от 1 800 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр с укреплением<small>архитектура, углы, длина</small></span><span class="pr">от 2 100 ₽</span></div>
+      <div class="row"><span class="nm">Наращивание<small>верхние и нижние формы, гелевые типсы</small></span><span class="pr">от 2 500 ₽</span></div>
+      <div class="row"><span class="nm">Мужской маникюр</span><span class="pr">от 1 300 ₽</span></div>
+      <div class="row"><span class="nm">Снятие чужого гель-лака с последующим покрытием</span><span class="pr">200 ₽</span></div>
+      <div class="row"><span class="nm">Снятие без последующего покрытия</span><span class="pr">400 ₽</span></div>
+      <div class="row"><span class="nm">Ремонт ногтя</span><span class="pr">300 ₽</span></div>
+      <div class="row"><span class="nm">Дизайн</span><span class="pr">от 50 ₽</span></div>
     </div>
-
-    <div class="plist rv" id="pedikyur">
-      <div class="row"><span class="nm">Экспресс-педикюр</span><span class="pr">1 800 ₽</span></div>
-      <div class="row"><span class="nm">Педикюр с покрытием</span><span class="pr">2 500 ₽</span></div>
-      <div class="row"><span class="nm">Педикюр подологический<small>без покрытия</small></span><span class="pr">2 700 ₽</span></div>
-      <div class="row"><span class="nm">Услуги подолога<small>работа с проблемой стопы и ногтя</small></span><span class="pr">от 400 ₽</span></div>
+    <div class="plist rv only-zap" id="ped-z">
+      <div class="row"><span class="nm">Обработка здоровых ногтей<small>без пяток и покрытия</small></span><span class="pr">от 1 200 ₽</span></div>
+      <div class="row"><span class="nm">Гигиенический педикюр<small>сложный - 2 200 ₽</small></span><span class="pr">1 800 ₽</span></div>
+      <div class="row"><span class="nm">Экспресс-педикюр<small>обработка ногтей и покрытие</small></span><span class="pr">от 1 800 ₽</span></div>
+      <div class="row"><span class="nm">Мужской педикюр<small>сложная стопа - 2 200 ₽</small></span><span class="pr">от 1 800 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр + декоративная плёнка</span><span class="pr">от 2 200 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр восстанавливающий<small>на профессиональной косметике</small></span><span class="pr">от 2 200 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр Смарт с покрытием</span><span class="pr">от 2 500 ₽</span></div>
+      <div class="row"><span class="nm">Подологический педикюр + покрытие</span><span class="pr">3 300 ₽</span></div>
     </div>
-
-    <div class="plist rv" id="krasota">
-      <div class="row"><span class="nm">Брови<small>оформление</small></span><span class="pr">800 ₽</span></div>
-      <div class="row"><span class="nm">Причёски</span><span class="pr">1 800 ₽</span></div>
-      <div class="row"><span class="nm">Макияж</span><span class="pr">2 500 ₽</span></div>
-      <div class="row"><span class="nm">Экспресс: макияж + причёска</span><span class="pr">3 500 ₽</span></div>
+    <div class="plist rv only-zap" id="pod-z">
+      <div class="row"><span class="nm">Тампонада<small>установка, 1 ноготь</small></span><span class="pr">200 ₽</span></div>
+      <div class="row"><span class="nm">Обработка грифозных ногтей<small>онихогрифоз</small></span><span class="pr">400 ₽</span></div>
+      <div class="row"><span class="nm">Прижигание бородавки</span><span class="pr">от 500 ₽</span></div>
+      <div class="row"><span class="nm">Стержневая мозоль + разгрузка<small>1 шт</small></span><span class="pr">от 700 ₽</span></div>
+      <div class="row"><span class="nm">Онихолизис<small>зачистка 1 ногтя</small></span><span class="pr">от 700 ₽</span></div>
+      <div class="row"><span class="nm">Вросший ноготь<small>онихокриптоз, 1 ноготь</small></span><span class="pr">1 000 ₽</span></div>
+      <div class="row"><span class="nm">Грибковые ногти<small>онихомикоз, 1 шт</small></span><span class="pr">от 1 000 ₽</span></div>
+      <div class="row"><span class="nm">Протезирование ногтя</span><span class="pr">1 500 ₽</span></div>
+      <div class="row"><span class="nm">Установка титановой нити</span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Подологический педикюр<small>трещины, мозоли, натоптыши, без покрытия</small></span><span class="pr">2 700 ₽</span></div>
+    </div>
+    <div class="plist rv only-zap" id="bro-z">
+      <div class="row"><span class="nm">Удаление волосков над губой</span><span class="pr">300 ₽</span></div>
+      <div class="row"><span class="nm">Снятие наращенных ресниц</span><span class="pr">400 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция или окрашивание бровей<small>на выбор</small></span><span class="pr">600 ₽</span></div>
       <div class="row"><span class="nm">Окрашивание ресниц</span><span class="pr">600 ₽</span></div>
-      <div class="row"><span class="nm">Ламинирование ресниц</span><span class="pr">1 000 ₽</span></div>
-      <div class="row"><span class="nm">Долговременная укладка + коррекция + ламинирование ресниц<small>комбо</small></span><span class="pr">1 900 ₽</span></div>
-      <div class="row"><span class="nm">Коррекция + окрашивание бровей + ламинирование ресниц<small>комбо</small></span><span class="pr">2 000 ₽</span></div>
-      <div class="row"><span class="nm">Укладка + коррекция + окрашивание бровей + ламинирование ресниц<small>комбо</small></span><span class="pr">2 300 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция + окрашивание бровей</span><span class="pr">1 000 ₽</span></div>
+      <div class="row"><span class="nm">Ламинирование ресниц</span><span class="pr">от 1 000 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция + долговременная укладка</span><span class="pr">от 1 200 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция + окрашивание + укладка</span><span class="pr">1 500 ₽</span></div>
+      <div class="row"><span class="nm">Комбо: укладка + коррекция + ламинирование ресниц</span><span class="pr">1 900 ₽</span></div>
+      <div class="row"><span class="nm">Комбо: коррекция + окрашивание бровей + ламинирование ресниц</span><span class="pr">2 000 ₽</span></div>
+      <div class="row"><span class="nm">Комбо: укладка + коррекция + окрашивание + ламинирование</span><span class="pr">от 2 300 ₽</span></div>
     </div>
 
-    <p class="upd">Прайс взят из раздела «Услуги» сообщества ВКонтакте. Цены не являются публичной офертой.</p>
+    <div class="plist on rv only-yar" id="man-y">
+      <div class="row"><span class="nm">Маникюр гигиенический</span><span class="pr">от 800 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр с покрытием<small>однотонное</small></span><span class="pr">от 1 200 ₽</span></div>
+      <div class="row"><span class="nm">Маникюр с укреплением гелем<small>архитектура, углы, длина</small></span><span class="pr">от 1 600 ₽</span></div>
+      <div class="row"><span class="nm">Мужской маникюр</span><span class="pr">от 1 000 ₽</span></div>
+      <div class="row"><span class="nm">Наращивание<small>гелевые типсы или верхние формы, средняя длина</small></span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Снятие гель-лака с последующим покрытием</span><span class="pr">200 ₽</span></div>
+      <div class="row"><span class="nm">Снятие гель-лака + маникюр<small>без покрытия</small></span><span class="pr">от 1 400 ₽</span></div>
+      <div class="row"><span class="nm">Снятие покрытия<small>без маникюра</small></span><span class="pr">400 ₽</span></div>
+      <div class="row"><span class="nm">Дизайн</span><span class="pr">от 50 ₽</span></div>
+    </div>
+    <div class="plist rv only-yar" id="ped-y">
+      <div class="row"><span class="nm">Обработка здоровых ногтей<small>без пяток и покрытия</small></span><span class="pr">от 1 200 ₽</span></div>
+      <div class="row"><span class="nm">Гигиенический педикюр</span><span class="pr">1 800 ₽</span></div>
+      <div class="row"><span class="nm">Мужской педикюр</span><span class="pr">от 1 800 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр + декоративная плёнка</span><span class="pr">от 2 200 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр подологический<small>без покрытия</small></span><span class="pr">от 2 200 ₽</span></div>
+      <div class="row"><span class="nm">Педикюр полный с покрытием Smart</span><span class="pr">от 2 500 ₽</span></div>
+      <div class="row"><span class="nm">Зачистка онихолизиса<small>1 шт</small></span><span class="pr">от 700 ₽</span></div>
+      <div class="row"><span class="nm">В четыре руки: Smart педикюр + маникюр с покрытием</span><span class="pr">4 000 ₽</span></div>
+    </div>
+    <div class="plist rv only-yar" id="bro-y">
+      <div class="row"><span class="nm">Ботокс бровей</span><span class="pr">300 ₽</span></div>
+      <div class="row"><span class="nm">Депиляция лица<small>одна зона</small></span><span class="pr">300 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция бровей</span><span class="pr">600 ₽</span></div>
+      <div class="row"><span class="nm">Коррекция + окрашивание</span><span class="pr">1 000 ₽</span></div>
+      <div class="row"><span class="nm">Ламинирование бровей<small>с коррекцией, без окрашивания</small></span><span class="pr">1 200 ₽</span></div>
+      <div class="row"><span class="nm">Ламинирование + окрашивание + уход + коррекция</span><span class="pr">1 500 ₽</span></div>
+      <div class="row"><span class="nm">Комплекс: ламинирование бровей и ресниц с окрашиванием<small>новым клиентам 2 600 ₽</small></span><span class="pr">2 800 ₽</span></div>
+      <div class="row"><span class="nm">Перманент бровей</span><span class="pr">6 500 ₽</span></div>
+    </div>
+
+    <p class="upd only-zap">Цены студии на Юбилейном - здесь принимает топ-мастер и работает полноценная подология. Точную сумму мастер подтверждает при записи.</p>
+    <p class="upd only-yar">Цены студии на Крохалева заметно ниже: маникюр с покрытием от 1 200 вместо 1 800, гигиенический от 800 вместо 1 200. Точную сумму мастер подтверждает при записи.</p>
   </div>
 </section>
 
@@ -574,11 +635,11 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     <div class="sec-head rv">
       <span class="tag">Новым клиентам</span>
       <h2>Первый визит <em>выгоднее</em></h2>
-      <p>Для тех, кто приходит в студию впервые.</p>
+      <p>Действующие предложения для тех, кто приходит впервые.</p>
     </div>
     <div class="gifts rv">
-      <div class="gift"><b>Скидка</b><span>на первую процедуру для новых клиентов</span></div>
-      <div class="gift"><b>Подбор</b><span>формы и покрытия под ваши ногти</span></div>
+      <div class="gift"><b>3 000 ₽</b><span>маникюр с покрытием + педикюр, знакомство с мастером</span></div>
+      <div class="gift"><b>2 600 ₽</b><span>ламинирование бровей и ресниц новым клиентам на Крохалева</span></div>
       <div class="gift"><b>Консультация</b><span>по домашнему уходу за руками и стопами</span></div>
       <div class="gift"><b>Онлайн-запись</b><span>без звонков, в любое время суток</span></div>
     </div>
@@ -801,6 +862,22 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     document.body.classList.remove('loc-zap','loc-yar');
     document.body.classList.add('loc-'+c);
     document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('on',b.dataset.city===c)});
+    document.querySelectorAll('section').forEach(function(sec){
+      function city(t){var w=t.closest('.tabs')||t;
+        if(t.classList.contains('only-zap')||w.classList.contains('only-zap'))return 'zap';
+        if(t.classList.contains('only-yar')||w.classList.contains('only-yar'))return 'yar';
+        return null;}
+      var vis=[].slice.call(sec.querySelectorAll('.tab')).filter(function(t){
+        var cc=city(t); return cc===null||cc===c;
+      });
+      if(!vis.length)return;
+      var on=vis.filter(function(t){return t.classList.contains('on')});
+      var target=on.length?on[0]:vis[0];
+      vis.forEach(function(x){x.classList.remove('on')});
+      target.classList.add('on');
+      sec.querySelectorAll('.plist').forEach(function(pl){pl.classList.remove('on')});
+      var el=document.getElementById(target.dataset.t); if(el)el.classList.add('on');
+    });
     try{localStorage.setItem('arsel_loc',c)}catch(e){}
     if(user){
       try{history.replaceState(null,'','#'+c)}catch(e){}
