@@ -157,6 +157,13 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .row{display:flex;justify-content:space-between;gap:14px;padding:17px 0;background:transparent;
      align-items:baseline;min-width:0;border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:0}
+.row.promo{background:var(--deep-soft);border-radius:14px;padding:16px 20px;border-bottom:0;margin-bottom:10px}
+.row.promo:after{display:none}
+.row.promo .nm{font-weight:600}
+.row.promo .pr{color:var(--gold-d)}
+.chip{display:inline-block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#fff;
+  background:var(--gold);border-radius:999px;padding:3px 9px;margin-right:9px;font-weight:700;
+  font-family:var(--sans);position:relative;top:-1px}
 .row:after{content:'';flex:1;order:1;align-self:flex-end;margin:0 12px 7px;
      border-bottom:2px dotted var(--line)}
 .row .nm{order:0}
@@ -465,6 +472,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     </div>
 
     <div class="plist on rv only-zap" id="man-z">
+      <div class="row promo"><span class="nm"><span class="chip">Новым клиентам</span>Маникюр с покрытием + педикюр<small>знакомство с мастером, однотонное покрытие</small></span><span class="pr">3 000 ₽</span></div>
       <div class="row"><span class="nm">Маникюр гигиенический<small>без покрытия</small></span><span class="pr">от 1 200 ₽</span></div>
       <div class="row"><span class="nm">Маникюр гигиенический со снятием<small>без последующего покрытия</small></span><span class="pr">от 1 400 ₽</span></div>
       <div class="row"><span class="nm">Маникюр с покрытием<small>однотонное</small></span><span class="pr">от 1 800 ₽</span></div>
@@ -513,6 +521,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     </div>
 
     <div class="plist on rv only-yar" id="man-y">
+      <div class="row promo"><span class="nm"><span class="chip">Новым клиентам</span>Маникюр с покрытием + педикюр<small>знакомство с мастером, однотонное покрытие</small></span><span class="pr">3 000 ₽</span></div>
       <div class="row"><span class="nm">Маникюр гигиенический</span><span class="pr">от 800 ₽</span></div>
       <div class="row"><span class="nm">Маникюр с покрытием<small>однотонное</small></span><span class="pr">от 1 200 ₽</span></div>
       <div class="row"><span class="nm">Маникюр с укреплением гелем<small>архитектура, углы, длина</small></span><span class="pr">от 1 600 ₽</span></div>
@@ -534,13 +543,13 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <div class="row"><span class="nm">В четыре руки: Smart педикюр + маникюр с покрытием</span><span class="pr">4 000 ₽</span></div>
     </div>
     <div class="plist rv only-yar" id="bro-y">
+      <div class="row promo"><span class="nm"><span class="chip">Новым клиентам</span>Ламинирование бровей и ресниц с окрашиванием<small>знакомство с мастером, обычная цена 2 800 ₽</small></span><span class="pr">2 600 ₽</span></div>
       <div class="row"><span class="nm">Ботокс бровей</span><span class="pr">300 ₽</span></div>
       <div class="row"><span class="nm">Депиляция лица<small>одна зона</small></span><span class="pr">300 ₽</span></div>
       <div class="row"><span class="nm">Коррекция бровей</span><span class="pr">600 ₽</span></div>
       <div class="row"><span class="nm">Коррекция + окрашивание</span><span class="pr">1 000 ₽</span></div>
       <div class="row"><span class="nm">Ламинирование бровей<small>с коррекцией, без окрашивания</small></span><span class="pr">1 200 ₽</span></div>
       <div class="row"><span class="nm">Ламинирование + окрашивание + уход + коррекция</span><span class="pr">1 500 ₽</span></div>
-      <div class="row"><span class="nm">Комплекс: ламинирование бровей и ресниц с окрашиванием<small>новым клиентам 2 600 ₽</small></span><span class="pr">2 800 ₽</span></div>
       <div class="row"><span class="nm">Перманент бровей</span><span class="pr">6 500 ₽</span></div>
     </div>
 
@@ -626,22 +635,6 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <figure class="g" data-ph="работа ученицы 2"><img src="u-2.jpg" alt="Работа ученицы курса" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Работа ученицы курса</figcaption></figure>
       <figure class="g" data-ph="работа ученицы 3"><img src="u-3.jpg" alt="Работа ученицы курса" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Классика: форма и красный лак</figcaption></figure>
       <figure class="g" data-ph="фото с обучения"><img src="u-4.jpg" alt="Обучение в студии Арсель" onerror="this.closest('figure').classList.add('noimg')"><figcaption>Выпускница курса с сертификатом</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="podarki">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="tag">Новым клиентам</span>
-      <h2>Первый визит <em>выгоднее</em></h2>
-      <p>Действующие предложения для тех, кто приходит впервые.</p>
-    </div>
-    <div class="gifts rv">
-      <div class="gift"><b>3 000 ₽</b><span>маникюр с покрытием + педикюр, знакомство с мастером</span></div>
-      <div class="gift"><b>2 600 ₽</b><span>ламинирование бровей и ресниц новым клиентам на Крохалева</span></div>
-      <div class="gift"><b>Консультация</b><span>по домашнему уходу за руками и стопами</span></div>
-      <div class="gift"><b>Онлайн-запись</b><span>без звонков, в любое время суток</span></div>
     </div>
   </div>
 </section>
