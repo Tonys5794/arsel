@@ -12,13 +12,13 @@
 <style>
 :root{
   /* палитра студии: бирюза с фотофона сообщества */
-  --bg:#F1F8F6; --bg2:#FFFFFF; --ink:#10262A; --muted:#5D7B7D;
-  --deep:#0E3B3F; --deep-d:#082A2D; --deep-soft:#DCF0EC;
-  --gold:#12A092; --gold-d:#0C7C71; --gold-lt:#8FE0D2;
-  --line:#D8E9E5; --ok:#4F8F7A;
+  --bg:#F6F7F4; --bg2:#FFFFFF; --ink:#1B2725; --muted:#6E7C77;
+  --deep:#223A33; --deep-d:#16261F; --deep-soft:#E5EDE8;
+  --gold:#3E8C74; --gold-d:#2E6B58; --gold-lt:#AFD3C4;
+  --line:#E2E8E3; --ok:#4F8F7A;
   --radius:18px; --wrap:1280px;
-  --shadow:0 18px 50px rgba(22,32,47,.13);
-  --shadow-s:0 8px 24px rgba(22,32,47,.09);
+  --shadow:0 16px 40px rgba(27,39,37,.07);
+  --shadow-s:0 4px 14px rgba(27,39,37,.04);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
 }
@@ -88,38 +88,35 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .btn-light:hover{background:#fff}
 
 /* первый экран */
-.cover{position:relative;background:linear-gradient(140deg,#082A2D 0%,#0E3B3F 52%,#17877E 100%);
-  color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
-  padding:164px 0 0;overflow:hidden}
-.cover:before{content:'';position:absolute;width:760px;height:760px;border-radius:50%;
-  right:-270px;top:-310px;background:rgba(143,224,210,.15)}
-.cover:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;
-  left:-190px;bottom:40px;background:rgba(255,255,255,.045)}
-.cover-in{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;padding:24px 24px 40px}
-.cover-eyebrow{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt);font-weight:600}
-.cover-name{font-family:var(--serif);font-weight:600;letter-spacing:.02em;
-  font-size:clamp(40px,7.4vw,96px);color:#fff;line-height:1;margin-top:16px}
-.cover-role{display:flex;align-items:center;gap:18px;margin-top:22px;font-size:13px;letter-spacing:.22em;
-  text-transform:uppercase;color:rgba(255,255,255,.86);flex-wrap:wrap;justify-content:center}
-.cover-role span{display:block;width:44px;height:1px;background:rgba(255,255,255,.45)}
-.cover-slogan{margin-top:30px;font-family:var(--serif);font-style:italic;font-weight:600;
-  font-size:clamp(24px,3.4vw,42px);color:var(--gold-lt);line-height:1.2}
-.cover-lead{margin-top:20px;max-width:44em;font-size:clamp(15.5px,.6vw + 13px,18px);line-height:1.65;
-  color:rgba(255,255,255,.78);font-weight:300}
-.cover-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;justify-content:center}
-.cover .btn{background:#F5F1E7;color:var(--deep-d)}
+.cover{position:relative;background:var(--deep);color:#fff;overflow:hidden;
+  display:grid;grid-template-columns:1.02fr .98fr;align-items:stretch;padding:0}
+.cover-in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:center;text-align:left;padding:clamp(130px,13vw,170px) clamp(26px,4vw,64px) clamp(60px,7vw,90px) clamp(22px,5vw,88px)}
+.cover-media{position:relative;min-height:600px}
+.cover-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.cover-media:after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--deep) 0%,rgba(34,58,51,.45) 22%,rgba(34,58,51,0) 55%)}
+.cover-eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);font-weight:600}
+.cover-name{font-family:var(--serif);font-weight:600;letter-spacing:.01em;
+  font-size:clamp(46px,6vw,86px);color:#fff;line-height:1;margin-top:18px}
+.cover-role{display:flex;align-items:center;gap:14px;margin-top:18px;font-size:12.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.8);flex-wrap:wrap}
+.cover-role span{display:block;width:34px;height:1px;background:rgba(255,255,255,.4)}
+.cover-lead{margin-top:26px;max-width:30em;font-size:clamp(15.5px,.5vw + 13px,17.5px);line-height:1.7;
+  color:rgba(255,255,255,.8);font-weight:300}
+.cover-cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.cover .btn{background:#F3F1EA;color:var(--deep-d)}
 .cover .btn:hover{background:#fff}
 .cover .btn-gold{background:var(--gold);color:#fff}
 .cover .btn-gold:hover{background:var(--gold-d)}
-.cover .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;box-shadow:none}
+.cover .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:#fff;box-shadow:none}
 .cover .btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff}
-.cover-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);
-  border-top:1px solid rgba(255,255,255,.16)}
-.cover-stats>div{padding:26px 24px;text-align:center;border-left:1px solid rgba(255,255,255,.13)}
-.cover-stats>div:first-child{border-left:0}
-.cover-stats b{display:block;font-family:var(--serif);font-size:clamp(22px,1.9vw,30px);font-weight:600;line-height:1.2}
-.cover-stats span{display:block;margin-top:5px;font-size:12.5px;color:rgba(255,255,255,.66);font-weight:300}
+@media(max-width:900px){
+  .cover{grid-template-columns:1fr}
+  .cover-media{min-height:400px;order:-1}
+  .cover-media:after{background:linear-gradient(0deg,var(--deep) 0%,rgba(34,58,51,.35) 40%,rgba(34,58,51,0) 75%)}
+  .cover-in{padding:34px 22px 54px;text-align:left}
+}
 @media(max-width:960px){
   .cover{padding-top:142px}
   .cover-stats{grid-template-columns:1fr 1fr}
@@ -155,16 +152,18 @@ header .hbtn{padding:11px 24px;font-size:14px}
      cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--muted);transition:.15s}
 .tab:hover{border-color:var(--deep)}
 .tab.on{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:var(--shadow-s)}
-.plist{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-       border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s)}
-.plist.on{display:grid}
-@media(max-width:760px){.plist.on{grid-template-columns:1fr}}
-.row{display:flex;justify-content:space-between;gap:16px;padding:15px 22px;background:#fff;
-     align-items:baseline;transition:.15s;min-width:0}
-.row:hover{background:var(--deep-soft)}
-.row .nm{font-size:15.5px}
+.plist{display:none;max-width:820px}
+.plist.on{display:block}
+.row{display:flex;justify-content:space-between;gap:14px;padding:17px 0;background:transparent;
+     align-items:baseline;min-width:0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row:after{content:'';flex:1;order:1;align-self:flex-end;margin:0 12px 7px;
+     border-bottom:2px dotted var(--line)}
+.row .nm{order:0}
+.row .pr{order:2}
+.row .nm{font-size:16px;max-width:60%}
 .row .nm small{display:block;font-size:12.5px;color:var(--muted);font-weight:300}
-.row .pr{font-family:var(--serif);font-size:21px;font-weight:700;white-space:nowrap;color:var(--deep)}
+.row .pr{font-family:var(--serif);font-size:22px;font-weight:600;white-space:nowrap;color:var(--deep);min-width:104px;text-align:right}
 .upd{font-size:12.5px;color:var(--muted);margin-top:16px;font-weight:300}
 
 /* почему */
@@ -178,7 +177,7 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .why p{font-size:14.5px;color:var(--muted);font-weight:300}
 
 /* о мастере */
-.doc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,3.4vw,58px);align-items:start}
+.doc-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,3.4vw,58px);align-items:start}
 @media(max-width:940px){.doc-grid{grid-template-columns:1fr}}
 .doc-grid>*{min-width:0}
 .q-big{font-family:var(--serif);font-size:clamp(21px,1.9vw,32px);line-height:1.3;color:var(--deep);
@@ -251,8 +250,8 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .legal ul{margin:8px 0 0;padding-left:18px}
 .legal b{color:#fff;font-weight:600}
 .legal a{color:#fff}
-.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(143,224,210,.4);border-radius:12px;
-             background:rgba(143,224,210,.14);font-size:14.5px;color:#fff;font-weight:500}
+.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(175,211,196,.4);border-radius:12px;
+             background:rgba(175,211,196,.14);font-size:14.5px;color:#fff;font-weight:500}
 
 footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-size:14px;font-weight:300}
 .ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
@@ -262,13 +261,13 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
   .logo{font-size:15px;letter-spacing:.07em}.q-big{font-size:19px;padding-left:14px}.wrap{padding:0 16px}}
 
 /* ===== ВЫБОР ГОРОДА ===== */
-.citybar{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;background:var(--deep-d);
+.citybar{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;background:var(--bg2);
   display:flex;align-items:center;justify-content:center;gap:10px;
-  border-bottom:1px solid rgba(143,224,210,.18)}
-.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(143,224,210,.72);
+  border-bottom:1px solid var(--line)}
+.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
   font-weight:600;margin-right:4px}
 .cbtn{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer;
-  background:transparent;border:1.5px solid rgba(143,224,210,.35);color:#F0E9DA;
+  background:transparent;border:1.5px solid var(--line);color:var(--muted);
   padding:6px 20px;border-radius:999px;transition:.18s;line-height:1.25}
 .cbtn:hover{border-color:var(--gold-lt)}
 .cbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
@@ -279,7 +278,7 @@ body.loc-zap .only-yar{display:none!important}
 body.loc-yar .only-zap{display:none!important}
 
 .tbd{color:var(--gold);border-bottom:1px dashed rgba(156,127,69,.65);font-weight:600}
-.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(143,224,210,.55)}
+.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(175,211,196,.55)}
 
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .mcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
@@ -359,28 +358,15 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     <div class="cover-eyebrow only-yar">Пермь · Емельяна Ярославского, 60 · жилой дом «Полосатый»</div>
     <div class="cover-name">Арсель</div>
     <div class="cover-role"><span></span>Маникюр · Педикюр · Подология · Курсы<span></span></div>
-    <div class="cover-slogan">Руки и стопы, за которые спокойно</div>
-    <p class="cover-lead">Студия красоты в Перми. Гузель Мутыгулина - дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру, 14 лет практики, практикующий специалист в области подологии. Две студии в городе, запись онлайн круглосуточно.</p>
+    <p class="cover-lead">Руки и стопы, за которые спокойно. Маникюр, педикюр и подология в двух студиях Перми. Основатель - Гузель Мутыгулина, мастер высшей категории с четырнадцатью годами практики.</p>
     <div class="cover-cta">
       <a class="btn btn-gold only-zap" href="https://dikidi.net/1072836" target="_blank" rel="noopener">Записаться онлайн</a>
       <a class="btn btn-gold only-yar" href="https://dikidi.net/1215680" target="_blank" rel="noopener">Записаться онлайн</a>
       <a class="btn" href="tel:+79068771816">Позвонить</a>
-      <a class="btn btn-line" href="https://vk.me/arselbeautyperm" target="_blank" rel="noopener">Написать во ВКонтакте</a>
     </div>
   </div>
-  <div class="cover-stats">
-    <div><b>5,0</b><span>рейтинг сообщества, 14 отзывов</span></div>
-    <div><b>14 лет</b><span>стажа у основателя студии</span></div>
-    <div><b>2 студии</b><span>в Перми</span></div>
-    <div><b>1 400+</b><span>подписчиков в сообществе</span></div>
-  </div>
+  <div class="cover-media"><img src="hero.jpg" alt="Гузель Мутыгулина, основатель студии «Арсель»"></div>
 </section>
-
-<div class="strip">
-  <div class="strip-track">
-    <span class="strip-item">Маникюр</span><span class="strip-item">Педикюр</span><span class="strip-item">Подология</span><span class="strip-item">Наращивание ногтей</span><span class="strip-item">Титановые нити</span><span class="strip-item">Брови</span><span class="strip-item">Макияж</span><span class="strip-item">Причёски</span><span class="strip-item">Курсы с нуля</span><span class="strip-item">Повышение квалификации</span><span class="strip-item">Маникюр</span><span class="strip-item">Педикюр</span><span class="strip-item">Подология</span><span class="strip-item">Наращивание ногтей</span><span class="strip-item">Титановые нити</span><span class="strip-item">Брови</span><span class="strip-item">Макияж</span><span class="strip-item">Причёски</span><span class="strip-item">Курсы с нуля</span><span class="strip-item">Повышение квалификации</span>
-  </div>
-</div>
 
 <section id="master">
   <div class="wrap">
@@ -390,7 +376,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <p>Две студии в Перми, маникюр, педикюр, подология, брови, макияж и причёски, плюс собственная школа.</p>
     </div>
     <div class="doc-grid">
-    <div class="doc-txt rv">
+    <div class="doc-txt rv" style="grid-column:1 / -1">
       <div class="q-big">Дипломированный и аккредитованный мастер высшей категории по маникюру и педикюру, практикующий специалист в области подологии</div>
       <div class="q-from">Гузель Мутыгулина, из описания сообщества</div>
       <p>Студия «Арсель» работает в Перми на двух площадках и закрывает уход целиком: руки, стопы, брови, макияж и причёску можно сделать в одном месте. Отдельное направление - подология: работа со стопой и ногтями там, где обычного педикюра уже недостаточно.</p>
@@ -402,7 +388,6 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
         <div><b>1 400+</b><span>подписчиков ВКонтакте</span></div>
       </div>
     </div>
-      <figure class="doc-photo rv noimg" data-ph="фото Гузель"></figure>
     </div>
 
     <div class="mgrid rv">
@@ -427,7 +412,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
   <div class="wrap">
     <div class="sec-head rv">
       <span class="tag">Прайс</span>
-      <h2>Цены <em>открыто</em>, без «уточняйте в личке»</h2>
+      <h2>Цены и <em>услуги</em></h2>
       <p>Прайс из карточки услуг сообщества. Точную сумму мастер подтверждает на записи: она зависит от состояния ногтей, длины и выбранного дизайна.</p>
     </div>
 
